@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
 """news-image-20261118 — reproduce the front page for 18 November 2026.
 
-The artwork (a one-page newspaper front page, 1024x1024 JPEG) is stored
-next to this file as entry.png. Running this script copies it verbatim
-into the output directory and then checks, using only the Python
-standard library, that the copy is a complete, well-formed JPEG of the
-expected size. No pixels are generated or altered here: the point of
-the program is a byte-for-byte, deterministic reproduction.
+The artwork (a one-page newspaper front page, 1024x1024 JPEG, 287,874
+bytes) is stored next to this file as entry.png. Running this script
+copies it verbatim into the output directory and then checks, using
+only the Python standard library, that the copy is a complete,
+well-formed JPEG of the expected size. No pixels are generated or
+altered here: the point of the program is a byte-for-byte,
+deterministic reproduction.
+
+v2 front page — THE WORLD TODAY, Wednesday 18 November 2026. Lead:
+GULF IN FLAMES — US jets hit an Iranian missile site on Qeshm, Iran
+drones Bahrain and Kuwait. Second row: NVIDIA $115.8B, up 103%
+(record quarter, $130B guide), and XI AND PUTIN MEET IN SHENZHEN
+ahead of Thursday's trilateral summit with Trump. Footer strip
+("Also Today"): Kerch Bridge span falls, Peltola wins Alaska 56–44,
+Ebola passes 11,000 cases, US loses measles-free status, Voyager 1
+reaches one light-day from Earth, OpenAI launches GPT-6.2.
 
 Usage:
     MAKEFUN_OUTPUT_DIR=out python3 main.py
@@ -25,6 +35,7 @@ OUTPUT = os.path.join(OUTPUT_DIR, "entry.png")
 
 EXPECTED_WIDTH = 1024
 EXPECTED_HEIGHT = 1024
+# v2 front page: entry.png is 287,874 bytes (1024x1024 JPEG).
 MAX_FILE_SIZE = 1_048_576  # 1 MiB, the competition limit
 
 
